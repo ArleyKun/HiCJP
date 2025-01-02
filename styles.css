@@ -14,13 +14,19 @@ h1 {
 body {
 	margin: 0px;
 }
-
 .container {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow-y: auto;
+    overflow-y: auto; /* Enables scrolling */
+    display: flex;
+    flex-direction: column; /* Ensures elements stack vertically */
+    align-items: center; /* Centers child elements horizontally */
+    justify-content: flex-start; /* Aligns content at the top */
+    background-color: #fce4ec; /* Optional background color */
+    padding: 20px; /* Adds padding for better spacing */
 }
+
 
 .message {
     padding: 20px;
