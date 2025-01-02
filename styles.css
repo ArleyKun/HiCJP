@@ -18,20 +18,54 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow-y: auto; /* Enables scrolling */
+    overflow: hidden;
     display: flex;
-    flex-direction: column; /* Ensures elements stack vertically */
-    align-items: center; /* Centers child elements horizontally */
-    justify-content: flex-start; /* Aligns content at the top */
-    background-color: #fce4ec; /* Optional background color */
-    padding: 20px; /* Adds padding for better spacing */
+    justify-content: center;
+    align-items: center;
+    background-color: #fce4ec;
 }
 
+.scrollbox {
+    position: absolute;
+    top: 20px; 
+    left: 50%; 
+    transform: translate(calc(-50% + 0.5px), 0);
+    width: 80%; 
+    max-width: 1200px;
+    max-height: 80%;
+    padding: 20px;
+    font: 24px sans-serif;
+    overflow: auto;
+    background-color: #eee;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+.scrollbox::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.scrollbox::-webkit-scrollbar-track {
+    border: 1px solid red;
+    border-radius: 10px;
+}
+
+.scrollbox::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}
+
+.scrollbox::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
 
 .message {
     padding: 20px;
     background-color: #eee;
-    min-width: 400px;
+    width: 90%; 
+    max-width: 1200px;
     height: 75%;
     position: absolute;
     left: 50%;
@@ -39,14 +73,16 @@ body {
     transform: translate(-50%, -50%);
     z-index: 0;
     overflow: hidden;
-    animation-name: openmsg;
+	animation-name: openmsg;
     animation-duration: 2s;
     animation-timing-function: linear;
     animation-play-state: paused;
     animation-fill-mode: forwards;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
 }
+
 
 @media screen and (max-width: 600px) {
     .message {
@@ -72,26 +108,6 @@ body {
 .heart>img {
 	width: 50px;
 	height: auto;
-}
-
-.message {
-	padding: 20px;
-	background-color: #eee;
-	min-width: 400px;
-	height: 75%;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 0;
-	overflow: hidden;
-	animation-name: openmsg;
-	animation-duration: 2s;
-	animation-timing-function: linear;
-	animation-play-state: paused;
-	animation-fill-mode: forwards;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-	border-radius: 5px;
 }
 
 .heart>img:hover {
